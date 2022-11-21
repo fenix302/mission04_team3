@@ -1,37 +1,69 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
-    <meta charset="utf-8">
-    <title>마커 생성하기</title>
-    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/Jaeheon/common.css?ver=1">
 </head>
 <body>
-<div id="map" style="width:800px;height:500px;"></div>
-
-<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=4a3c4fcfa5a54d02d981e8713d261798"></script>
-<script>
-    var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
-        mapOption = { 
-            center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
-            level: 3 // 지도의 확대 레벨
-        };
-
-    var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
-
-    // 마커가 표시될 위치입니다 
-    var markerPosition  = new kakao.maps.LatLng(33.450701, 126.570667); 
-
-    // 마커를 생성합니다
-    var marker = new kakao.maps.Marker({
-        position: markerPosition
-    });
-
-    // 마커가 지도 위에 표시되도록 설정합니다
-    marker.setMap(map);
-    // 마커가 드래그 가능하도록 설정합니다 
-    marker.setDraggable(true); 
-    // 아래 코드는 지도 위의 마커를 제거하는 코드입니다
-// marker.setMap(null);    
-</script>
+    <div id="box">
+        <header>
+            <div class="top">
+                <div class="logo">
+                    <!-- <a href="#"><img src="../resources/Jaeheon/images/coconut.ico" alt="코코아" style="width: 100%"; height="100%";></a> -->
+                </div>
+                <div class="companyname">
+                    <a href="#"><span>코코넛</span>게임즈</a>
+                </div>
+                <nav class="menu">
+                    <ul class="navi">
+                        <li>
+                            <a href="#">회사소개</a>
+                            <ul class="submenu">
+                                <li><a href="#">인사말</a></li>
+                                <li><a href="#">조직도</a></li>
+                                <li><a href="#">오시는길</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">사업영역</a>
+                            <ul class="submenu">
+                                <li><a href="#">주택사업</a></li>
+                                <li><a href="#">건축사업</a></li>
+                                <li><a href="#">인테리어</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">입주정보</a>
+                            <ul class="submenu">
+                                <li><a href="#">입주단지</a></li>
+                                <li><a href="#">입주캘린더</a></li>
+                                <li><a href="#">입주모임</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">인재채용</a>
+                            <ul class="submenu">
+                                <li><a href="#">직무소개</a></li>
+                                <li><a href="#">채용공고</a></li>
+                                <li><a href="#">기술교육</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="login">로그인</div>
+            </div>
+        </header>
+        <div class="bodywrap">
+            <div class="imgslide">이미지슬라이드자리</div>
+            <div class="content">
+                <div class="content_title">찾아오시는 길</div>
+                <div class="map">맵</div>
+            </div>
+        </div>
+        <footer></footer>
+    </div>
 </body>
 </html>
