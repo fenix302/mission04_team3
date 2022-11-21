@@ -63,7 +63,16 @@
 
 
     <!-- Map API 적용 시작 -->
-    <div class="location"><h1>오시는 길</h1></div>
+    <div class="location">
+        <h1>오시는 길</h1>
+        <div class="location_guide">
+            <a href="#">HOME</a>
+            > 
+            <a href="#">SERVICE</a>
+            >
+            <strong>오시는 길</strong>
+        </div>
+    </div>
     <div class="mapbox">
         <div id="map">
             <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=d900b751c324b497aa62a8afdf7c7088"></script>
@@ -99,9 +108,17 @@
                     map: map // 마커를 표시할 지도 객체
                 });
             </script>
+        <!-- Map API 적용 종료 -->
         </div>
+        <div id="mapinfo">
+            <h3>JH 건설</h3>
+            <h4>경기도 광명시 일직동 514, 302호</h4>
+        </div>
+
+
+
+
     </div>
-<!-- Map API 적용 종료 -->
 
 
 
@@ -117,26 +134,26 @@
 
 
     <footer>
-            <div class="footer_top">
-                <ul>
-                    <li><a href="#">회사소개</a></li>
-                    <li><a href="#">고객지원</a></li>
-                    <li><a href="#">홈페이지 이용약관</a></li>
-                    <li><a href="#">개인정보처리방침</a></li>
-                    <li><a href="#">사이트맵</a></li>
-                </ul>
-                <a href="#상단" style=" font-size: 16px; position: fixed; bottom: 13px; right: 30px; border-radius: 50%; border: 5px solid black; background-color: rgb(3, 3, 3); color: aquamarine;">TOP</a>
-            </div>
-            <div class="footer_middle">
-                <ul>
-                    <li><a href="#"><img src="../resources/Jinho/images/youtube_icon_jh.png" alt="유튜브"></a></li>
-                    <li><a href="#"><img src="../resources/Jinho/images/twitter_social_icon_jh.png" alt="트위터"></a></li>
-                    <li><a href="#"><img src="../resources/Jinho/images/instagram_icon_jh.png" alt="인스타그램"></a></li>
-                </ul>
-            </div>
-            <div class="footer_bottom">    
-                <p>(주)JH건설 <br> (우)14353 경기도 광명시 일직동 514, 302호 <br>대표전화: 02-2680-1515, 010-2244-5588  <br> COPYRIGHT &copy; by WEBDESIGN. ALL RIGHTS RESERVED</p>
-            </div>
+        <div class="footer_top">
+            <ul>
+                <li><a href="#">회사소개</a></li>
+                <li><a href="#">고객지원</a></li>
+                <li><a href="#">홈페이지 이용약관</a></li>
+                <li><a href="#">개인정보처리방침</a></li>
+                <li><a href="#">사이트맵</a></li>
+            </ul>
+            <a href="#상단" style=" font-size: 16px; position: fixed; bottom: 13px; right: 30px; border-radius: 50%; border: 5px solid black; background-color: rgb(3, 3, 3); color: aquamarine;">TOP</a>
+        </div>
+        <div class="footer_middle">
+            <ul>
+                <li><a href="#"><img src="../resources/Jinho/images/youtube_icon_jh.png" alt="유튜브"></a></li>
+                <li><a href="#"><img src="../resources/Jinho/images/twitter_social_icon_jh.png" alt="트위터"></a></li>
+                <li><a href="#"><img src="../resources/Jinho/images/instagram_icon_jh.png" alt="인스타그램"></a></li>
+            </ul>
+        </div>
+        <div class="footer_bottom">    
+            <p>(주)JH건설 <br> (우)14353 경기도 광명시 일직동 514, 302호 <br>대표전화: 02-2680-1515, 010-2244-5588  <br> COPYRIGHT &copy; by WEBDESIGN. ALL RIGHTS RESERVED</p>
+        </div>
     </footer>
 </body>
 </html>
