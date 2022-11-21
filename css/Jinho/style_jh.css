@@ -99,16 +99,49 @@
     position: relative;
 }
 
+
+
+
+.location{
+    width: 1280px;
+    margin: 0 auto;
+}
+.location h1{
+    text-align: center;
+    font-size: 45px;
+    font-weight: bold;
+}
+
+
 .mapbox{
     width: 1280px;
     height: 600px;
-    margin: auto;
-    margin-bottom: 150px;
+    margin: 0 auto;
+    position: relative;
+    margin-top: 50px;
+    border-top: 1px solid #000;
+    padding-top: 60px;
 }
 
-h1{
-    text-align: left;
+#map{
+    position: relative;
+    width:100%;
+    height:600px; 
+    border: 1px solid grey;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .footer_top{
     width: 1280px;
