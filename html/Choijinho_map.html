@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JH 건설</title>
+
+    <link rel="shortcut icon" href="../resources/Jinho/images/icon_jh.PNG">
+    <link rel="icon" href="../resources/Jinho/images/icon_jh.PNG">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../css/Jinho/style_jh.css">
+    <script src="../javascript/Jinho/jquery-3.3.1.js"></script>
+    <script src="../javascript/Jinho/jinho.js"></script>
+</head>
+<body>
+    <p id="상단"></p>
+    <div class="header">
+        <div class="header_box">
+            <div class="logo"><a href="#"><img src="../resources/Jinho/images/LOGO_jh.PNG" title="mainLogo" alt="main logo" id="logo"></a></div>
+            <ul class="navi">
+                <li class="navTop">
+                    <a href="#" class="navInfo">MAIN</a>
+                    <ul class="submenu">
+                        <li><a href="#">홈으로</a></li>
+                    </ul>
+                </li>
+                <li class="navTop">
+                    <a href="#" class="navInfo">ABOUT</a>
+                    <ul class="submenu">
+                        <li><a href="#">회사소개</a></li>
+                        <li><a href="#">연혁</a></li>
+                    </ul>
+                </li>
+                <li class="navTop">
+                    <a href="#" class="navInfo">SERVICE</a>
+                    <ul class="submenu">
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">고객센터</a></li>
+                        <li><a href="#">오시는길</a></li>
+                    </ul>
+                </li>
+                <li class="navTop">
+                    <a href="#" class="navInfo">LOGIN</a>
+                    <ul class="submenu">
+                        <li><a href="#">로그인</a></li>
+                        <li><a href="#">회원가입</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="main">
+        <div>
+            <img src="../resources/Jinho/images/main1_jh.jpg" alt="메인이미지" class="mainImg">
+            <img src="../resources/Jinho/images/main2_jh.jpg" alt="메인이미지2" class="mainImg" style="position: absolute; top: 80px; left: 0; animation: img 7s infinite alternate;">
+        </div>
+    </div>
+
+
+
+    <!-- Map API 적용 시작 -->
+    
+    
+    <div id="map" style="width:1000px;height:600px; position: absolute; top: 150px; left: 150px;"></div>
+    <p><em>지도를 클릭해주세요!</em></p> 
+    <div id="clickLatlng"></div>
+    
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=d900b751c324b497aa62a8afdf7c7088&libraries=drawing"></script>
+    <script>
+    var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+        mapOption = { 
+            center: new kakao.maps.LatLng(37.50312873377742, 126.87900321613907), // 지도의 중심좌표
+            level: 2 // 지도의 확대 레벨
+        };
+    
+    var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+    
+    // 일반 지도와 스카이뷰로 지도 타입을 전환할 수 있는 지도타입 컨트롤을 생성합니다
+    var mapTypeControl = new kakao.maps.MapTypeControl();
+    
+    // 지도에 컨트롤을 추가해야 지도위에 표시됩니다
+    // kakao.maps.ControlPosition은 컨트롤이 표시될 위치를 정의하는데 TOPRIGHT는 오른쪽 위를 의미합니다
+    map.addControl(mapTypeControl, kakao.maps.ControlPosition.TOPRIGHT);
+    
+    // 지도 확대 축소를 제어할 수 있는  줌 컨트롤을 생성합니다
+    var zoomControl = new kakao.maps.ZoomControl();
+    map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
+    
+    var imageSrc = 'https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/marker_red.png', // 마커이미지의 주소입니다    
+        imageSize = new kakao.maps.Size(64, 69), // 마커이미지의 크기입니다
+        imageOption = {offset: new kakao.maps.Point(27, 69)}; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
+    
+    // 마커의 이미지정보를 가지고 있는 마커이미지를 생성합니다
+    var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption),
+        markerPosition = new kakao.maps.LatLng(37.50326837196165, 126.87900583629788); // 마커가 표시될 위치입니다
+    
+    // 마커를 생성합니다
+    var marker = new kakao.maps.Marker({
+        position: markerPosition,
+        image: markerImage // 마커이미지 설정 
+    });
+    
+    // 마커가 지도 위에 표시되도록 설정합니다
+    marker.setMap(map);
+    
+    // 아래 코드는 지도 위의 마커를 제거하는 코드입니다
+    // marker.setMap(null);    
+    
+    // 마커를 클릭했을 때 마커 위에 표시할 인포윈도우를 생성합니다
+    var iwContent = '<div style="padding:5px;">Hello World!</div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+        iwRemoveable = true; // removeable 속성을 ture 로 설정하면 인포윈도우를 닫을 수 있는 x버튼이 표시됩니다
+    
+    // 인포윈도우를 생성합니다
+    var infowindow = new kakao.maps.InfoWindow({
+        content : iwContent,
+        removable : iwRemoveable
+    });
+    
+    // 마커에 클릭이벤트를 등록합니다
+    kakao.maps.event.addListener(marker, 'click', function() {
+          // 마커 위에 인포윈도우를 표시합니다
+          infowindow.open(map, marker);  
+    });
+    
+    // 지도에 표시할 원을 생성합니다
+    var circle = new kakao.maps.Circle({
+        center : new kakao.maps.LatLng(33.450701, 126.570667),  // 원의 중심좌표 입니다 
+        radius: 50, // 미터 단위의 원의 반지름입니다 
+        strokeWeight: 5, // 선의 두께입니다 
+        strokeColor: '#75B8FA', // 선의 색깔입니다
+        strokeOpacity: 1, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+        strokeStyle: 'dashed', // 선의 스타일 입니다
+        fillColor: '#CFE7FF', // 채우기 색깔입니다
+        fillOpacity: 0.7  // 채우기 불투명도 입니다   
+    }); 
+    
+    // 지도에 원을 표시합니다 
+    circle.setMap(map); 
+    
+    // 다각형을 구성하는 좌표 배열입니다. 이 좌표들을 이어서 다각형을 표시합니다
+    var polygonPath = [
+        new kakao.maps.LatLng(37.503315671754606, 126.87898312291428),
+        new kakao.maps.LatLng(37.503209641521906, 126.87882496189755),
+        new kakao.maps.LatLng(37.50315789180535, 126.8788815926923),
+        new kakao.maps.LatLng(37.503087968323776, 126.87878840292095),
+        new kakao.maps.LatLng(37.50288772688397, 126.87901491445895), 
+        new kakao.maps.LatLng(37.50302984616647, 126.87922108191248), 
+        new kakao.maps.LatLng(37.50314695929462, 126.87920392911322) 
+    ];
+    
+    // 지도에 표시할 다각형을 생성합니다
+    var polygon = new kakao.maps.Polygon({
+        path:polygonPath, // 그려질 다각형의 좌표 배열입니다
+        strokeWeight: 3, // 선의 두께입니다
+        strokeColor: '#39DE2A', // 선의 색깔입니다
+        strokeOpacity: 0.8, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+        strokeStyle: 'longdash', // 선의 스타일입니다
+        fillColor: '#A2FF99', // 채우기 색깔입니다
+        fillOpacity: 0.7 // 채우기 불투명도 입니다
+    });
+    
+    // 지도에 다각형을 표시합니다
+    polygon.setMap(map);
+    
+    // 도형 스타일을 변수로 설정합니다
+    var strokeColor = '#39f',
+        fillColor = '#cce6ff',
+        fillOpacity = 0.5,
+        hintStrokeStyle = 'dash';
+    
+    var options = { // Drawing Manager를 생성할 때 사용할 옵션입니다
+        map: map, // Drawing Manager로 그리기 요소를 그릴 map 객체입니다
+        drawingMode: [
+            kakao.maps.Drawing.OverlayType.MARKER,
+            kakao.maps.Drawing.OverlayType.ARROW,
+            kakao.maps.Drawing.OverlayType.POLYLINE,
+            kakao.maps.Drawing.OverlayType.RECTANGLE,
+            kakao.maps.Drawing.OverlayType.CIRCLE,
+            kakao.maps.Drawing.OverlayType.ELLIPSE,
+            kakao.maps.Drawing.OverlayType.POLYGON
+        ],
+        // 사용자에게 제공할 그리기 가이드 툴팁입니다
+        // 사용자에게 도형을 그릴때, 드래그할때, 수정할때 가이드 툴팁을 표시하도록 설정합니다
+        guideTooltip: ['draw', 'drag', 'edit'], 
+        markerOptions: {
+            draggable: true,
+            removable: true
+        },
+        arrowOptions: {
+            draggable: true,
+            removable: true,
+            strokeColor: strokeColor,
+            hintStrokeStyle: hintStrokeStyle
+        },
+        polylineOptions: {
+            draggable: true,
+            removable: true,
+            strokeColor: strokeColor,
+            hintStrokeStyle: hintStrokeStyle
+        },
+        rectangleOptions: {
+            draggable: true,
+            removable: true,
+            strokeColor: strokeColor,
+            fillColor: fillColor,
+            fillOpacity: fillOpacity
+        },
+        circleOptions: {
+            draggable: true,
+            removable: true,
+            strokeColor: strokeColor,
+            fillColor: fillColor,
+            fillOpacity: fillOpacity
+        },
+        ellipseOptions: {
+            draggable: true,
+            removable: true,
+            strokeColor: strokeColor,
+            fillColor: fillColor,
+            fillOpacity: fillOpacity
+        },
+        polygonOptions: {
+            draggable: true,
+            removable: true,
+            strokeColor: strokeColor,
+            fillColor: fillColor,
+            fillOpacity: fillOpacity
+        }
+    };
+    
+    // 위에 작성한 옵션으로 Drawing Manager를 생성합니다
+    var manager = new kakao.maps.Drawing.DrawingManager(options);
+    
+    // Toolbox를 생성합니다. 
+    // Toolbox 생성 시 위에서 생성한 DrawingManager 객체를 설정합니다.
+    // DrawingManager 객체를 꼭 설정해야만 그리기 모드와 매니저의 상태를 툴박스에 설정할 수 있습니다.
+    var toolbox = new kakao.maps.Drawing.Toolbox({drawingManager: manager});
+    
+    // 지도 위에 Toolbox를 표시합니다
+    // kakao.maps.ControlPosition은 컨트롤이 표시될 위치를 정의하는데 TOP은 위 가운데를 의미합니다.
+    map.addControl(toolbox.getElement(), kakao.maps.ControlPosition.TOP);
+    
+    
+    // 지도에 클릭 이벤트를 등록합니다
+    // 지도를 클릭하면 마지막 파라미터로 넘어온 함수를 호출합니다
+    kakao.maps.event.addListener(map, 'click', function(mouseEvent) {        
+        
+        // 클릭한 위도, 경도 정보를 가져옵니다 
+        var latlng = mouseEvent.latLng; 
+        
+        // 마커 위치를 클릭한 위치로 옮깁니다
+        marker.setPosition(latlng);
+        
+        var message = '클릭한 위치의 위도는 ' + latlng.getLat() + ' 이고, ';
+        message += '경도는 ' + latlng.getLng() + ' 입니다';
+        
+        var resultDiv = document.getElementById('clickLatlng'); 
+        resultDiv.innerHTML = message;
+        
+    });
+    
+    </script>
+
+
+
+    <!-- Map API 적용 종료 -->
+
+
+    <footer>
+            <div class="footer_top">
+                <ul>
+                    <li><a href="#">회사소개</a></li>
+                    <li><a href="#">고객지원</a></li>
+                    <li><a href="#">홈페이지 이용약관</a></li>
+                    <li><a href="#">개인정보처리방침</a></li>
+                    <li><a href="#">사이트맵</a></li>
+                </ul>
+                <a href="#상단" style=" font-size: 16px; position: fixed; bottom: 13px; right: 30px; border-radius: 50%; border: 5px solid black; background-color: rgb(3, 3, 3); color: aquamarine;">TOP</a>
+            </div>
+            <div class="footer_middle">
+                <ul>
+                    <li><a href="#"><img src="../resources/Jinho/images/youtube_icon_jh.png" alt="유튜브"></a></li>
+                    <li><a href="#"><img src="../resources/Jinho/images/twitter_social_icon_jh.png" alt="트위터"></a></li>
+                    <li><a href="#"><img src="../resources/Jinho/images/instagram_icon_jh.png" alt="인스타그램"></a></li>
+                </ul>
+            </div>
+            <div class="footer_bottom">    
+                <p>(주)JH건설 <br> (우)14353 경기도 광명시 일직동 514, 302호 <br>대표전화: 02-2680-1515, 010-2244-5588  <br> COPYRIGHT &copy; by WEBDESIGN. ALL RIGHTS RESERVED</p>
+            </div>
+    </footer>
+</body>
+</html>

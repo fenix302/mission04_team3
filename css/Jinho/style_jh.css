@@ -1,0 +1,166 @@
+@charset "utf-8";
+
+*{
+    font-family: 'Noto Sans KR', sans-serif;
+    list-style: none;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    color: rgb(0, 0, 0);
+    border-collapse: collapse;
+}
+.logo{
+    float: left;
+    margin-right: 520px;
+}
+#logo{
+    height: 80px;
+    float: left;
+}
+.header{
+    /* width: 100%; */
+    height: 80px;
+    margin: 0 auto;
+    margin-bottom: 3px;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgb(0, 0, 0);
+    z-index: 10;
+}
+.header_box{
+    width: 1280px;
+    height: 80px;
+    display: flex;
+}
+.navi{
+    float: right;
+    height: 100%;
+    display: flex;
+}
+.navi > li{
+    display: inline-block;
+    text-align: center;
+    width: 150px;
+    height: 80px;
+}
+.nav > li > a{
+    width: 150px;
+}
+.navTop{
+    display: inline-block;
+    position: relative;
+    margin-top: 20px;
+}
+.navInfo{
+    font-size: 25px;
+    color: aquamarine;
+}
+.navTop:hover{
+    transform: translateY(-3px);
+}
+.submenu{
+    margin-top: 24px;
+    position: absolute;
+    background: rgb(0, 0, 0);
+    display: none;
+    z-index: 50;
+}
+.submenu li{
+    width: 154px;
+    height: 40px;
+}
+.submenu li a{
+    display: block;
+    font-size: 18px;
+    line-height: 35px;
+    color: white;
+}
+.submenu li a:hover{
+    color: aquamarine;
+}
+.main{
+    padding-top: 80px;
+    padding-bottom: 50px;
+}
+
+@keyframes img {
+    0% {opacity: 1;}
+    45% {opacity: 1;}
+    55% {opacity: 0;}
+    100% {opacity: 0;}
+}
+.mainImg{
+    width: 100%;
+    height: 350px;
+    position: relative;
+}
+
+h1{width: 1280px; margin: 0 auto; display: flex; font-size: 45px; padding: 20px 0 50px 0;}
+
+.faq{
+    width: 1280px;
+    margin: 0 auto;
+    margin-bottom: 100px;
+}
+.q {
+    font-size: 20px;
+    cursor: pointer;
+    padding: 0 0 10px 0;
+    margin-left: 10px;
+}
+.q p::before{
+    content : "Q. ";
+    font-size: 30px;
+    font-weight: 700;
+    left: 10px;
+}
+.faq_box:hover {
+    background: rgb(202, 202, 202);
+    transition: all 1s;
+}
+
+.a_box{
+    position: relative;
+    display: none;
+    padding: 40px;
+    background: rgb(218, 218, 218);
+}
+.a_box::before{
+    position: absolute;
+    content : "A. "; 
+    display: block;
+    font-size: 30px;
+    font-weight: 700;
+    top: 30px;
+    left: 30px;
+}
+.a > p{
+    padding: 0px 30px 30px 40px;
+}
+
+.footer_top{
+    width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    border-top: 1px solid grey;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.26);
+    padding-bottom: 10px;
+    justify-content: space-between;
+}
+.footer_top li{
+    float: left; margin-top: 10px; padding: 0 20px; font-size: 14px;
+}
+.footer_top li+li{
+    border-left: 1px solid #000;
+}
+.footer_middle, .footer_bottom{
+    width: 1280px;
+    margin: 20px auto;
+}
+.footer_middle li{
+    float: right; padding: 5px;
+}
