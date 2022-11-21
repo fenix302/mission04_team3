@@ -1,0 +1,62 @@
+*{
+    margin: 0;
+    padding: 0;
+    background: rgb(240, 237, 237);
+}
+.team_top{
+    display: flex;
+    margin: 50px 110px 50px 110px;
+    align-items: baseline;
+    border-bottom: 1px solid black;
+    padding-bottom: 30px;
+    position: relative;
+}
+
+#team_logo{
+    width: 260px;
+    padding-right: 60px;
+}
+h1{
+    font-size: 80px;
+    display: inline;
+}
+.mission{
+    position: absolute;
+    right: 50px;
+    bottom: 50px;
+    font-size: 30px;
+}
+.team_box1{
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 100px;
+}
+.team_mates1{
+    list-style: none;
+}
+.team_main{
+    width: 200px;
+}
+.team_box2{
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 100px;
+}
+.team_mates2{
+    list-style: none;
+    display: flex;
+    padding-top: 20px;
+    position: relative;
+}
+.team_mates2 p {
+    position: absolute;
+    top: 25%;
+    background: rgba(0, 0, 0, 0);
+    font-size: 50px;
+    left: 25px;
+    color: black;
+}
+.team_mates2>a>img{
+    width: 200px;
+    height: 330px;
+}
