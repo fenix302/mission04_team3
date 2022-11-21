@@ -131,7 +131,7 @@
     width: 1280px;
     margin: 0 auto;
     position: relative;
-    margin-top: 50px;
+    margin-top: 40px;
     border-top: 1px solid #000;
     padding-top: 60px;
 }
@@ -144,7 +144,7 @@
 }
 
 #mapinfo{
-    padding-top: 30px;
+    margin-bottom: 40px;
     display: inline-block;
 }
 
@@ -160,7 +160,12 @@
     color: rgb(83, 83, 83);
 }
 
-
+.map2{
+    margin: 0 auto;
+}
+.map2 p {
+    line-height: 30px;
+}
 
 
 
