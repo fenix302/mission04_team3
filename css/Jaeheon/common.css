@@ -1,4 +1,17 @@
 @charset "utf-8";
+
+@font-face {
+    font-family: 'CookieRun';
+    src: url('../../resources/Jaeheon/fonts/CookieRun\ Bold.ttf');
+}
+
+@font-face {
+    font-family: 'SBAggroB';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroB.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
 *{
     margin: 0 auto;
     padding: 0;
@@ -43,8 +56,14 @@ a{
     font-size: 20px;
 }
 
-.companyname a{
+.companyname > a{
     font-size: 35px;
+    font-family: 'CookieRun';
+}
+
+.companyname span{
+    color: rgba(109, 77, 66, 1);
+    font-family: 'CookieRun';
 }
 
 .menu{
@@ -106,6 +125,7 @@ a{
     width: 200px;
     line-height: 100px;
     font-size: 20px;
+    font-family: 'SBAggroB';
 }
 
 .bodywrap{
@@ -135,16 +155,39 @@ a{
 
 .content_title{
     width: 100%;
-    height: 80px;
+    height: 60px;
     font-size: 25px;
     text-align: center;
-    line-height: 80px;
-    background-color:antiquewhite;
+    line-height: 60px;
+    box-sizing: border-box;
+    border-bottom: 1px solid black;
+}
+
+.content_notification>p{
+    width: 600px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    text-align: left;
+
+}
+
+.content_notification>div{
+    width: 600px;
+    height: 100px;
+    color: white;
+    background-color: brown;
+    border: 1px solid black;
+    border-radius: 10px;
+    font-size: 15px;
+    padding: 10px;
     box-sizing: border-box;
 }
 
+
 #map{
-    margin-top: 30px;
+    margin-top: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.7);
 }
 
 .content>p{
@@ -153,12 +196,44 @@ a{
 }
 
 footer{
-    width: 100%;
+    width: 1920px;
     height: 100px;
     background-color: black;
+    clear: both;
 }
 
+.ftcontent{
+    float: left;
+    width: 1920px;
+    height: 50px;
+}
 
+.ftmenu{
+    width: 1920px;
+    height: 50px;
+}
+
+.ftmenu li{
+    float: left;
+    line-height: 50px;
+    margin-left: 40px;
+    font-weight: bold;
+}
+
+.ftmenu li a{
+    color: white;
+    font-size: 16px;
+}
+
+.copy{
+    float: right;
+    width: 1920px;
+    height: 50px;
+    color: white;
+    text-align: center;
+    margin: 0 auto;
+    line-height: 50px;
+}
 
 /* 카카오 맵 css */
 .dot {overflow:hidden;float:left;width:12px;height:12px;background: url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/mini_circle.png');}    
