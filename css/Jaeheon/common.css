@@ -164,7 +164,7 @@ a{
 }
 
 .content_notification>p{
-    width: 600px;
+    width: 620px;
     margin-top: 10px;
     margin-bottom: 10px;
     font-size: 16px;
@@ -173,7 +173,8 @@ a{
 }
 
 .content_notification>div{
-    width: 600px;
+    width: 620px;
+    line-height: 25px;
     height: 100px;
     color: white;
     background-color: brown;
