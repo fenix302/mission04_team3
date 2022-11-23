@@ -20,26 +20,41 @@
             <nav class="menu">
                 <ul class="navi">
                     <li>
+                        <a href="#">고객지원</a>
+                    </li>
+                    <li>
+                        <a href="#">채용</a>
+                    </li>
+                    <li>
                         <a href="#">서비스</a>
                     </li>
                     <li>
                         <a href="#">회사소개</a>
-                    </li>
-                    <li>
-                        <a href="#">고객지원</a>
                     </li>
                 </ul>
             </nav>
         </div>
     </header>
     <div class="bodywrap">
-        <a href="#">
+        <div class="image">
             <img src="../resources/Dohyeon/images/dohyun.jpg" alt="이미지1">
-        </a>
+            <span class="imgtext">오시는 길</span>
+        </div>
     </div>
     <div class="mainMap">
-        <h1>오시는 길</h1>
-        
+                <!-- 지도를 표시할 div 입니다 -->
+        <div id="map" style="width:100%;height:550px;"></div>
+
+        <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=4ba44b29dfabd3c113721f624f2ebc03"></script>
+        <script>
+        var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+            mapOption = { 
+                center: new kakao.maps.LatLng(37.501529181474616, 127.0677646789514), // 지도의 중심좌표
+                level: 3 // 지도의 확대 레벨
+            };
+        // 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
+        var map = new kakao.maps.Map(mapContainer, mapOption); 
+        </script>        
     </div>    
 <footer>
     <div class="copy">COPYRIGHT &#169; by WEBDESIGN. ALL RIGHTS RESERVED</div>

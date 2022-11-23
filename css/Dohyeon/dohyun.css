@@ -1,7 +1,7 @@
 @charset "utf-8";
 
 *{
-    margin: 0 ;
+    margin: 0 auto;
     padding: 0;
     list-style: none;
     color: #333;
@@ -11,6 +11,13 @@
 @font-face {
     font-family: 'DH';
     src: url('/resources/Dohyeon/images/EF_MACHO\(윈도우용_TTF\).ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ga';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEduPowerExtraBoldA.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
@@ -45,9 +52,9 @@ header{
     float: left;
     height: 50px;
     width: 350px;
-    margin-top: 40px;
-    margin-left: 50px;
-    font-size: 25px;
+    margin-top: 35px;
+    margin-left: 15px;
+    font-size: 30px;
     text-align: center;
     font-style: italic;
     color: #6f54ce;
@@ -56,10 +63,9 @@ header{
 }
 
 .menu{
-    float: left;
+    width: 1200px;
     height: 100px;
-    width: 1250px;
-    z-index: 1;
+    display: inline-block;
     }
 
 .navi{
@@ -68,20 +74,38 @@ header{
 }
 
 .navi > li{
-    float: left;
+    float: right;
 }
 
 .navi > li > a{
-    margin-left: 300px;
-    line-height: 18px;
     font-size: 25px;
     font-weight: bold;
+    font-family: 'ga';
     width: 180px;
-    display: inline;
+    text-align: center;
+    display: block;
 }
 
 .navi > li > a:hover{
-    opacity: 0.6;
+    color: #6f54ce;
+}
+
+span.imgtext{
+    width: 500px;
+    height: 50px;
+    font-size: 50px;
+    font-weight: bold;
+    font-family: 'ga';
+    position: absolute;
+    left: 44%;
+    top: 31%;
+    color: #fff;
+}
+
+.mainMap{
+    margin-top: 40px;
+    width: 1200px;
+    height: 750px;
 }
 
 
@@ -93,8 +117,7 @@ footer{
 .copy{
     font-size: 20px;
     font-weight: bold;
-    width: 600;
-    height: 50;
+    height: 50px;
     color: #fff;
     text-align: center;
     line-height: 150px;
