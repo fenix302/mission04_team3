@@ -1,64 +1,94 @@
-@charset "uft-8";
+
 
 *{
     margin: 0;
     padding: 0;
-    background: rgb(240, 237, 237);
 }
-.team_top{
-    display: flex;
-    margin: 50px 110px 50px 110px;
-    align-items: baseline;
-    border-bottom: 1px solid black;
-    padding-bottom: 30px;
-    position: relative;
+.hlist{
+
+    margin-top: 10px;
+    padding-top: 25px;
+
+} 
+
+.hlist>ul>li{
+
+    list-style: none;
+    float: left;
+    margin: 0px 0px 0px 40px;
+    padding: 0px 0px 0px 40px;
+    font-size: 20pt;
+    font-weight: bold;
+    margin-left: 7%;
+
 }
 
-#team_logo{
-    width: 260px;
-    padding-right: 60px;
-}
+
 h1{
-    font-size: 80px;
-    display: inline;
+    background: rgb(66, 69, 87);
 }
-.mission{
-    position: absolute;
-    right: 50px;
-    bottom: 50px;
-    font-size: 30px;
+
+.headerline{  
+    
+    height: 50px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+
 }
-.team_box1{
-    display: flex;
-    justify-content: space-between;
-    padding: 0px 100px;
-}
-.team_mates1{
-    list-style: none;
-}
-.team_main{
-    width: 200px;
-}
-.team_box2{
-    display: flex;
-    justify-content: space-between;
-    padding: 0px 100px;
-}
-.team_mates2{
-    list-style: none;
-    display: flex;
-    padding-top: 20px;
+
+
+.pc-viewnew{
+    background: rgb(99, 96, 96);
+    height: 160px;
+    width: 1152px;
+    border-bottom: 0px none rgb(34, 34, 34);
     position: relative;
+    display: block;
+    margin-left: 20%;
+
+
 }
-.team_mates2 p {
-    position: absolute;
-    top: 25%;
-    background: rgba(0, 0, 0, 0);
-    font-size: 50px;
-    left: 25px;
-    color: black;
+
+.content{
+    background: aliceblue;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 10%;
 }
-.team_mates2>a>img{
-    width: 200px;
-    height: 330px;
+
+.titlewrap>h3{
+    font-size: 36px;
+	font-style: normal;
+    text-align: center;
+    font-weight: normal;
+    
+}
+.box-type2>ul>li{
+    list-style: none;
+    border: 1.6px solid rgb(221, 221, 221);
+	border-top: 1.6px solid rgb(221, 221, 221);
+	border-right: 1.6px solid rgb(221, 221, 221);
+	border-bottom: 1.6px solid rgb(221, 221, 221);
+	border-left: 1.6px solid rgb(221, 221, 221);
+	margin: 0px 0px 35px;
+	padding: 24.5px 38.5px;
+}
+
+footer{
+    background: rgb(207, 207, 232);
+}
+
+footer{
+    height:100px;
+	/* width: 1152px; */
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 5%;
+    margin-bottom: 2%;
+    text-align: center;
+    padding-top: 25px;
+}
+
+.lastlist{
+    list-style: none;
 }
