@@ -249,8 +249,9 @@ footer{
 
 #ftlanguage{
     margin-top: 10px;
+    margin-right: 30px;
     float: right;
-    width: 300px;
+    width: 200px;
     height: 30px;
 }
 
